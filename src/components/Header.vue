@@ -5,7 +5,7 @@
         <!-- logo -->
         <div id="logo">
           <img src="../assets/CosmosRolLogo.png" alt="Cosmos Rol Logo" />
-          <router-link to="/home" id="brand">
+          <router-link to="/" id="brand">
             <strong>Cosmos</strong>Rol
           </router-link>
         </div>

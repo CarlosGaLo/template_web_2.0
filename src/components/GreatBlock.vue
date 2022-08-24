@@ -23,7 +23,9 @@ export default {
   //Las computed cambian en función a otras funciones del mismo archivo
   computed: {
     isThisForced() {
-      return this.currentRouteName() != ("home" || "init");
+      console.log(this.currentRouteName());
+      console.log(this.currentRouteName() != ("home" || "init"));
+      return (this.currentRouteName() != "home" && this.currentRouteName() != "init");
     },
   },
 };

@@ -24,7 +24,8 @@
       class="contacto"
       v-model="mensaje"
     />
-    <p>
+    <!-- El siguiente mensaje solo se mostrará si se han introducido nombre, apellidos e e-mail -->
+    <p v-if="nombre && apellidos && email">
       Te llamas {{ nombre }} {{ apellidos }}, tu correo es {{ email }} y tienes
       que decirnos que:
     </p>
@@ -33,10 +34,12 @@
       <!-- A continuación vamos a ver cómo se hacen condicionales dentro de vue. Lo veremos simplemente cogiendo la edad y, si la variable existe lo vamos a decir, si tiene entre 18 y 20 años pondremos un mensaje y para mayores de 20 pondremos otro -->
       <input type="number" name="edad" id="4" class="contacto" v-model="edad" />
       <!-- En la línea de abajo simplemente comprobamos si la variable edad existe. -->
-      <p v-if="edad">Existe la variable edad y su valor es {{edad}}</p>
+      <p v-if="edad">Existe la variable edad y su valor es {{ edad }}</p>
       <!-- El bloque de abajo ya es un if anidado. -->
-      <p v-if="edad>=20">Eres mayor de edad</p>
-      <p v-else-if="edad>=18 && edad<=20">Eres mayor de edad pero tampoco mucho</p>
+      <p v-if="edad >= 20">Eres mayor de edad</p>
+      <p v-else-if="edad >= 18 && edad <= 20">
+        Eres mayor de edad pero tampoco mucho
+      </p>
       <p v-else>No eres mayor de edad</p>
       <!-- Para más información sobre clases condicionales, usando el v-bind, puedes ir al componente GreatBlock que tiene un código añadido usando el v-bind condicional -->
     </div>
